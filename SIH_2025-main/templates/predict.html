@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Results</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-warning" href="/">Bharat Pashudhan AI</a>
+      <button class="btn btn-light ms-auto" onclick="window.location.href='/'">Analyze Another</button>
+    </div>
+  </nav>
+
+  <!-- Results Section -->
+  <section id="results-section" class="container my-5">
+    <div class="row g-4">
+      <!-- Cow Image -->
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm text-center">
+          <h4 class="mb-3">Uploaded Image</h4>
+          {% if image_path %}
+            <img src="{{ image_path }}" alt="Cow Image" class="img-fluid rounded">
+          {% else %}
+            <p class="text-muted">No image available.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Cattle Details -->
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h4 class="mb-3">Cattle Details</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Age:</strong> {{ age }} years</li>
+            <li class="list-group-item"><strong>Body Weight:</strong> {{ body_weight }} kg</li>
+            <li class="list-group-item"><strong>Parity:</strong> {{ parity }}</li>
+            <li class="list-group-item"><strong>Historical Milk Yield:</strong> {{ historical_milk_yield }} liters</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Prediction Results -->
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h4 class="mb-3">Prediction Results</h4>
+          {% if results %}
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Longevity:</strong> {{ results.longevity }}</li>
+              <li class="list-group-item"><strong>Milk Productivity:</strong> {{ results.milk_productivity }}</li>
+              <li class="list-group-item"><strong>Reproductive Efficiency:</strong> {{ results.reproductive_efficiency }}</li>
+              <li class="list-group-item"><strong>Elite Dam:</strong> {{ results.elite_dam }}</li>
+              <li class="list-group-item"><strong>Elite Dam Probability:</strong> {{ results.elite_dam_probability }}</li>
+              <li class="list-group-item"><strong>ATP Score:</strong> {{ results.ATP_score }}</li>
+            </ul>
+          {% else %}
+            <p class="text-muted">No predictions available.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Bharat Pashudhan AI | Smart Cattle Analysis for Farmers</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

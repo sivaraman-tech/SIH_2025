@@ -1,0 +1,36 @@
+body {
+  background-color: #f8fafc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background: #006d77;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+}
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.result-box {
+  margin-top: 30px;
+}

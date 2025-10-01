@@ -1,0 +1,3 @@
+Age (years),Body Weight (kg),Parity,Historical Milk Yield (liters),Cow Image,output,flag,username,timestamp
+5,500,2,6000,flagged\Cow Image\321c9aa4017c65a593d3\istockphoto-496397741-612x612.jpg,,,,2025-09-18 19:48:28.768746
+5,500,3,5990,flagged\Cow Image\5681fa4ed900f56e49b9\istockphoto-496397741-612x612.jpg,"{""longevity"": 11.118638868115731, ""milk_productivity"": 3966.1710544777916, ""reproductive_efficiency"": 1.8059679610043398, ""elite_dam"": 1, ""elite_dam_probability"": 0.83, ""ATP_score"": 64.52}",,,2025-09-18 19:54:38.275008
